@@ -22,8 +22,13 @@
 
 ![ ](https://cdn.discordapp.com/attachments/750744477290725446/816437247095865415/unknown.png)
 
-2. aperte no arquivo `menu` e começe a diverção
+2. aperte no arquivo `menu` coom o botão direito.
 
 ![ ](https://cdn.discordapp.com/attachments/750744477290725446/816437672410349608/unknown.png)
+
+3. aperte em executar como administrador.
+
+![ ](https://user-images.githubusercontent.com/69019082/109810211-04f9e280-7c08-11eb-86c9-0baf61a3bd7a.png)
+
 
 (c) Ramires Oliv 
