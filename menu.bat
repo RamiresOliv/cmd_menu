@@ -14,12 +14,12 @@ echo Seja bem vindo(a) %username%!!
 echo      MENU DE UTILIDADES (Beta)
 echo  ==================================
 echo * 1. Abrir Chrome                  * 
-echo * 2. abrir minecraft   (teste)     *
-echo * 3. Abrir YouTube                 *
+echo * 2. Esvaziar Lixeira              *
+echo * 3. Abrir o painel de controle    *
 echo * 4. Ir para o menu 2              *
-echo * 5. ir para o lugar               * 
+echo * 5. arquivo com senha             * 
 echo * 6. Sair                          *
-echo * 7.                               * 
+echo * 7. (em teste)                    * 
 echo  ==================================
 
 set /p opcao= Escolha uma opcao: 
@@ -27,7 +27,7 @@ echo ------------------------------
 if %opcao% equ 1 goto opcao1
 if %opcao% equ 2 goto opcao2
 if %opcao% equ 3 goto opcao3
-if %opcao% equ 4 goto opcao4
+if %opcao% equ 4 goto menu2
 if %opcao% equ 5 goto opcao5
 if %opcao% equ 6 goto opcao6
 if %opcao% equ 7 goto opcao7
@@ -50,21 +50,18 @@ goto menu
 
 :opcao2
 cls
-msg * erro: oops essa opcao ainda esta em testes
-cls
+rd /S /Q c:\$Recycle.bin
+echo =========================================================================
+echo *      Lixeira Esvaziada aperte qualquer tecla para continuar...         *
+echo =========================================================================
+pause > nul
 goto menu
 
 :opcao3
 cls
-start https://www.youtube.com/?gl=BR&tab=r1
-cls
-goto menu
-
-:opcao4
-cls
-start estensao.bat
-cls
-exit
+control.exe
+pause
+goto menus
 
 :opcao5
 echo Porfavor digite a senha para proceguir...
@@ -102,7 +99,14 @@ pause > nul
 cls
 exit
 
-:: ==================================================== definições de opções 
+:opcao7
+cls
+echo parece que essa opçao ainda esta em teste
+echo aperte qualquer tecla para continua
+pause > nul
+goto menu
+
+:: ==================================================== 1 definições de opções 
 
 :sai
 exit
@@ -115,3 +119,35 @@ cls
 msg * kkk ola bom vc fez isso pra nada (ainda)
 cls
 exit
+
+:: ==================================================== menu 2 
+
+
+:menu2
+
+date /t
+
+echo Seja bem vindo(a) %username%!!
+                   
+echo      MENU DE UTILIDADES 2! 
+echo  ==================================
+echo * 1. abrir o log de auteracoes       * 
+echo * 2. voutar ao menu 1
+echo  ==================================
+set /p opcao= Escolha uma opcao: 
+echo ------------------------------
+if %opcao% equ 1 goto opcao1
+if %opcao% equ 2 goto opcao2
+IF %opcao% GEQ 9 goto opcao6
+
+:: ==================================================== opções 
+
+:opcao1
+cls
+start assets/log_do_sistema.log
+cls
+goto menu2
+
+:opcao2
+cls
+goto menu
